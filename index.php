@@ -24,6 +24,11 @@
 			</table>
 		</div>
 	</body>
+	<style>
+		body {
+			background-color: rgb(180, 180, 180);
+		}
+	</style>
 	<script>
 		reloadTicker = function(data) {
 			data = data.USD
@@ -34,17 +39,11 @@
 				change = " ";
 				if(cur > prev) {
 					change = "+"+(cur-prev).toFixed(2);
-					$('#'+symbol+'-price').css('color', 'green');
-					$('#'+symbol+'-change').css('color', 'green');
 				} else if(cur < prev) {
 					change = "-"+(prev-cur).toFixed(2);
-					$('#'+symbol+'-price').css('color', 'red');
-					$('#'+symbol+'-change').css('color', 'red');
-				} else {
-					$('#'+symbol+'-price').css('color', 'black');
-					$('#'+symbol+'-change').css('color', 'black');
 				}
 				
+				//fill table row
 				$('#'+symbol).html(
 					"<td id='"+symbol+"-symbol'>"+symbol+"</td>"+
 					"<td id='"+symbol+"-name'>"+data.TOSYMBOL+"</td>"+
@@ -53,6 +52,18 @@
 					"<td id='"+symbol+"-24h-change'>"+parseFloat(data.CHANGE24HOUR).toFixed(2)+"</td>"+
 					"<td id='"+symbol+"-update'>"+(new Date()).toLocaleTimeString()+"</td>"
 				)
+				
+				//process colors
+				if(cur > prev) {
+					//$('#'+symbol+'-price').css('color', 'lawngreen');
+					$('#'+symbol+'-change').css('color', 'lawngreen');
+				} else if(cur < prev) {
+					//$('#'+symbol+'-price').css('color', 'crimson');
+					$('#'+symbol+'-change').css('color', 'crimson');
+				} else {
+					//$('#'+symbol+'-price').css('color', 'black');
+					$('#'+symbol+'-change').css('color', 'black');
+				}
 			}
 			return;
 		}
@@ -93,8 +104,9 @@
 		$(function() {
 			$('#coins-tb').css('font-size', '14px');
 			refreshCoins();
-			setInterval(refreshCoins, 2500);
+			setInterval(refreshCoins, 5000);
 			
+			//attach buttons
 			$('#font-size-inc').click(function(){
 				sz = parseInt($('#coins-tb').css('font-size').substring(0,2));
 				$('#coins-tb').css('font-size', ''+(sz+2)+'px');
