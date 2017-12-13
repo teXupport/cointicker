@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>Custom Crypto Monitoring (coinmarketcap.com API)</title>
+		<title>Custom Crypto Monitoring (cryptocompare.com API)</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	<body>
@@ -15,7 +15,7 @@
 					<th>Name</th>
 					<th>Price</th>
 					<th>Change</th>
-					<th>1h Change</th>
+					<th>24h Change</th>
 					<th>Updated</th>
 				</tr>
 				<tr id="BTC"></tr>
@@ -26,11 +26,12 @@
 	</body>
 	<script>
 		reloadTicker = function(data) {
+			data = data.USD
 			if(data) {
-				symbol = data[0].symbol;
+				symbol = data.FROMSYMBOL;
 				prev = parseFloat($('#'+symbol+'-price').text());
-				cur = parseFloat(data[0].price_usd);
-				change = "+0.00";
+				cur = data.PRICE;
+				change = " ";
 				if(cur > prev) {
 					change = "+"+(cur-prev).toFixed(2);
 					$('#'+symbol+'-price').css('color', 'green');
@@ -46,10 +47,10 @@
 				
 				$('#'+symbol).html(
 					"<td id='"+symbol+"-symbol'>"+symbol+"</td>"+
-					"<td id='"+symbol+"-name'>"+data[0].name+"</td>"+
-					"<td id='"+symbol+"-price'>"+data[0].price_usd+"</td>"+
+					"<td id='"+symbol+"-name'>"+data.TOSYMBOL+"</td>"+
+					"<td id='"+symbol+"-price'>"+data.PRICE+"</td>"+
 					"<td id='"+symbol+"-change'>"+change+"</td>"+
-					"<td id='"+symbol+"-1h-change'>"+parseFloat(data[0].percent_change_1h).toFixed(2)+"</td>"+
+					"<td id='"+symbol+"-24h-change'>"+parseFloat(data.CHANGE24HOUR).toFixed(2)+"</td>"+
 					"<td id='"+symbol+"-update'>"+(new Date()).toLocaleTimeString()+"</td>"
 				)
 			}
@@ -57,31 +58,42 @@
 		}
 		
 		refreshCoins = function() {
-			//BTC - Bitcoin
-			$.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/",
-				function(data) {reloadTicker(data);},
-				"json"
-			);
-			
-			//ETH - Ethereum
-			$.get("https://api.coinmarketcap.com/v1/ticker/ethereum/",
-				function(data) {reloadTicker(data);},
-				"json"
-			);
-			
-			//LTC - Litecoin
-			$.get("https://api.coinmarketcap.com/v1/ticker/litecoin/",
-				function(data) {reloadTicker(data);},
-				"json"
-			);
+			if(1) {
+				$.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,LTC&tsyms=USD",
+					function(data) {
+						$.each(data.RAW, function(index, value) {
+							reloadTicker(value);
+						});
+					},
+					"json"
+				);
+			} else {
+				//BTC - Bitcoin
+				$.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/",
+					function(data) {reloadTicker(data);},
+					"json"
+				);
+				
+				//ETH - Ethereum
+				$.get("https://api.coinmarketcap.com/v1/ticker/ethereum/",
+					function(data) {reloadTicker(data);},
+					"json"
+				);
+				
+				//LTC - Litecoin
+				$.get("https://api.coinmarketcap.com/v1/ticker/litecoin/",
+					function(data) {reloadTicker(data);},
+					"json"
+				);
+			}
 			
 			return;
 		}
 		
 		$(function() {
-			$('#coins-tb').css('font-size', '30px');
+			$('#coins-tb').css('font-size', '14px');
 			refreshCoins();
-			setInterval(refreshCoins, 3*60000/10);
+			setInterval(refreshCoins, 2500);
 			
 			$('#font-size-inc').click(function(){
 				sz = parseInt($('#coins-tb').css('font-size').substring(0,2));
