@@ -7,3 +7,12 @@ span.separator {
 	width: 100%;
 	display: inline-block;
 }
+
+.chart {
+	height: 12em;
+	width: 20em;
+}
+
+img.icon {
+	height: 1.5em;
+}

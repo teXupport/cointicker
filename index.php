@@ -13,6 +13,7 @@
 		<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 		<script src="./res/js/init.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	</head>
 	<body>
 		<div id = "controls">
@@ -21,6 +22,9 @@
 					<td><button id="font-size-inc">Bigger Text</button></td>
 					<td><button id="font-size-dec">Smaller Text</button></td>
 					<td></td>
+				</tr>
+				<tr>
+					<td colspan="3"><label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" /></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input id="sym-text" /></td>
