@@ -1,26 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<title>Custom Crypto Monitoring (cryptocompare.com API)</title>
+		<link rel="stylesheet" href="http://www.atlasestateagents.co.uk/css/tether.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="./res/css/main.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="./res/js/rawCoins.js"></script>
+		<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+		<script src="./res/js/init.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	</head>
 	<body>
+		<div id = "controls">
+			<table class="table-responsive">
+				<tr>
+					<td><button id="font-size-inc">Bigger Text</button></td>
+					<td><button id="font-size-dec">Smaller Text</button></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input id="sym-text" /></td>
+					<td><button id="add-sym">Add Symbol</button></td>
+				</tr>
+			</table>
+		</div>
+		<span class="separator"> </span>
 		<div id="ticker">
-			<button id="font-size-inc">Bigger Text</button>
-			<button id="font-size-dec">Smaller Text</button>
-			<table id="coins-tb" border="1px black">
+			<table id="coins-tb" class="table-responsive table-bordered">
 				<tr>
 					<th>Symbol</th>
 					<th>Name</th>
-					<th>Price</th>
+					<th>Price (USD)</th>
 					<th>Change</th>
 					<th>24h Change</th>
 					<th>Updated</th>
+					<th>Hide</th>
 				</tr>
-				<tr id="BTC"></tr>
-				<tr id="ETH"></tr>
-				<tr id="LTC"></tr>
 			</table>
 		</div>
 	</body>
@@ -29,92 +48,5 @@
 			background-color: rgb(180, 180, 180);
 		}
 	</style>
-	<script>
-		reloadTicker = function(data) {
-			data = data.USD
-			if(data) {
-				symbol = data.FROMSYMBOL;
-				prev = parseFloat($('#'+symbol+'-price').text());
-				cur = data.PRICE;
-				change = " ";
-				if(cur > prev) {
-					change = "+"+(cur-prev).toFixed(2);
-				} else if(cur < prev) {
-					change = "-"+(prev-cur).toFixed(2);
-				}
-				
-				//fill table row
-				$('#'+symbol).html(
-					"<td id='"+symbol+"-symbol'>"+symbol+"</td>"+
-					"<td id='"+symbol+"-name'>"+data.TOSYMBOL+"</td>"+
-					"<td id='"+symbol+"-price'>"+data.PRICE+"</td>"+
-					"<td id='"+symbol+"-change'>"+change+"</td>"+
-					"<td id='"+symbol+"-24h-change'>"+parseFloat(data.CHANGE24HOUR).toFixed(2)+"</td>"+
-					"<td id='"+symbol+"-update'>"+(new Date()).toLocaleTimeString()+"</td>"
-				)
-				
-				//process colors
-				if(cur > prev) {
-					//$('#'+symbol+'-price').css('color', 'lawngreen');
-					$('#'+symbol+'-change').css('color', 'lawngreen');
-				} else if(cur < prev) {
-					//$('#'+symbol+'-price').css('color', 'crimson');
-					$('#'+symbol+'-change').css('color', 'crimson');
-				} else {
-					//$('#'+symbol+'-price').css('color', 'black');
-					$('#'+symbol+'-change').css('color', 'black');
-				}
-			}
-			return;
-		}
-		
-		refreshCoins = function() {
-			if(1) {
-				$.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,LTC&tsyms=USD",
-					function(data) {
-						$.each(data.RAW, function(index, value) {
-							reloadTicker(value);
-						});
-					},
-					"json"
-				);
-			} else {
-				//BTC - Bitcoin
-				$.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/",
-					function(data) {reloadTicker(data);},
-					"json"
-				);
-				
-				//ETH - Ethereum
-				$.get("https://api.coinmarketcap.com/v1/ticker/ethereum/",
-					function(data) {reloadTicker(data);},
-					"json"
-				);
-				
-				//LTC - Litecoin
-				$.get("https://api.coinmarketcap.com/v1/ticker/litecoin/",
-					function(data) {reloadTicker(data);},
-					"json"
-				);
-			}
-			
-			return;
-		}
-		
-		$(function() {
-			$('#coins-tb').css('font-size', '14px');
-			refreshCoins();
-			setInterval(refreshCoins, 5000);
-			
-			//attach buttons
-			$('#font-size-inc').click(function(){
-				sz = parseInt($('#coins-tb').css('font-size').substring(0,2));
-				$('#coins-tb').css('font-size', ''+(sz+2)+'px');
-			});
-			$('#font-size-dec').click(function(){
-				sz = parseInt($('#coins-tb').css('font-size').substring(0,2));
-				$('#coins-tb').css('font-size', ''+(sz-2)+'px');
-			});
-		});
-	</script>
+	<script src="./res/js/ticker.js"></script>
 </html>

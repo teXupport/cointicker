@@ -1,0 +1,9 @@
+body {
+	background-color: rgb(180, 180, 180);
+}
+
+span.separator {
+	height: 2em;
+	width: 100%;
+	display: inline-block;
+}
