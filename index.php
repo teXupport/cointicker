@@ -39,8 +39,11 @@
 					<th>Symbol</th>
 					<th>Name</th>
 					<th>Price (USD)</th>
-					<th>Change</th>
-					<th>24h Change</th>
+					<th>Change (USD)</th>
+					<th>24h Change (USD)</th>
+					<th>Price (BTC)</th>
+					<th>Change (BTC)</th>
+					<th>24h Change (BTC)</th>
 					<th>Updated</th>
 					<th>Hide</th>
 				</tr>

@@ -47,17 +47,28 @@ function drawChart() {
 	});
 }
 
-reloadTicker = function(data) {
-	data = data.USD
-	if(data) {
-		symbol = data.FROMSYMBOL;
-		prev = parseFloat($('#'+symbol+'-price').text());
-		cur = data.PRICE;
-		change = " ";
-		if(cur > prev) {
-			change = "+"+(cur-prev).toFixed(2);
-		} else if(cur < prev) {
-			change = "-"+(prev-cur).toFixed(2);
+reloadTicker = function(dataRaw) {
+	dataUSD = dataRaw.USD;
+	dataBTC = dataRaw.BTC;
+	
+	if(dataRaw) {
+		symbol = dataUSD.FROMSYMBOL;
+		prevUSD = parseFloat($('#'+symbol+'-price').text());
+		curUSD = dataUSD.PRICE;
+		changeUSD = " ";
+		if(curUSD > prevUSD) {
+			changeUSD = "+"+(curUSD-prevUSD).toFixed(2);
+		} else if(curUSD < prevUSD) {
+			changeUSD = "-"+(prevUSD-curUSD).toFixed(2);
+		}
+		
+		prevBTC = parseFloat($('#'+symbol+'-price').text());
+		curBTC = dataBTC.PRICE;
+		changeBTC = " ";
+		if(curBTC > prevBTC) {
+			changeBTC = "+"+(curBTC-prevBTC).toPrecision(3);
+		} else if(curBTC < prevBTC) {
+			changeBTC = "-"+(prevBTC-curBTC).toPrecision(3);
 		}
 		
 		//show if hidden
@@ -68,9 +79,12 @@ reloadTicker = function(data) {
 			"<td id='"+symbol+"-symbol'>"+
 				"<a href='https://www.cryptocompare.com/coins/"+symbol+"/overview'><img class='icon' alt="+symbol+" src='https://www.cryptocompare.com"+imageLib[symbol]+"'></a>&nbsp;"+symbol+"</td>"+
 			"<td id='"+symbol+"-name'>"+nameLib[symbol]+"</td>"+
-			"<td id='"+symbol+"-price'>"+data.PRICE+"</td>"+
-			"<td id='"+symbol+"-change'>"+change+"</td>"+
-			"<td id='"+symbol+"-24h-change'>"+parseFloat(data.CHANGE24HOUR).toFixed(2)+"</td>"+
+			"<td id='"+symbol+"-price-usd'>"+parseFloat(dataUSD.PRICE).toFixed(2)+"</td>"+
+			"<td id='"+symbol+"-change-usd'>"+changeUSD+"</td>"+
+			"<td id='"+symbol+"-24h-change-usd'>"+parseFloat(dataUSD.CHANGE24HOUR).toFixed(2)+"</td>"+
+			"<td id='"+symbol+"-price-btc'>"+parseFloat(dataBTC.PRICE).toPrecision(3)+"</td>"+
+			"<td id='"+symbol+"-change-btc'>"+changeBTC+"</td>"+
+			"<td id='"+symbol+"-24h-change-btc'>"+parseFloat(dataBTC.CHANGE24HOUR).toPrecision(3)+"</td>"+
 			"<td id='"+symbol+"-update'>"+(new Date()).toLocaleTimeString()+"</td>"+
 			"<td id='"+symbol+"-hide'><button class='hider'>X</button></td>"
 		)
@@ -89,12 +103,20 @@ reloadTicker = function(data) {
 		});
 		
 		//process colors
-		if(cur > prev) {
-			$('#'+symbol+'-change').css('color', 'lawngreen');
-		} else if(cur < prev) {
-			$('#'+symbol+'-change').css('color', 'crimson');
+		if(curUSD > prevUSD) {
+			$('#'+symbol+'-change-usd').css('color', 'lawngreen');
+		} else if(curUSD < prevUSD) {
+			$('#'+symbol+'-change-usd').css('color', 'crimson');
 		} else {
-			$('#'+symbol+'-change').css('color', 'black');
+			$('#'+symbol+'-change-usd').css('color', 'black');
+		}
+		
+		if(curBTC > prevBTC) {
+			$('#'+symbol+'-change-btc').css('color', 'lawngreen');
+		} else if(curBTC < prevBTC) {
+			$('#'+symbol+'-change-btc').css('color', 'crimson');
+		} else {
+			$('#'+symbol+'-change-btc').css('color', 'black');
 		}
 	}
 	return;
@@ -102,7 +124,7 @@ reloadTicker = function(data) {
 
 refreshCoins = function() {
 	if(fsymStr.length >= 3) {
-		$.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+fsymStr+"&tsyms=USD",
+		$.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+fsymStr+"&tsyms=USD,BTC",
 			function(data) {
 				$.each(data.RAW, function(index, value) {
 					reloadTicker(value);
