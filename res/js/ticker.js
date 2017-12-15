@@ -97,7 +97,11 @@ reloadTicker = function(dataRaw) {
 			$this = $(this);
 			$this.parents('tr').html('');
 			$this.parents('tr').hide();
-			fsym.splice(parseInt(fsym.indexOf(symbol)), 1);
+			symbol = $this.parent().prop('id').split('-')[0];
+			console.log(symbol);
+			$('#'+symbol+'-24h-chart-div').remove();
+			console.log(fsym.indexOf(symbol));
+			console.log(fsym.splice(fsym.indexOf(symbol), 1));
 			fsymStr = updateSymbols(fsym);
 			reboot();
 		});
