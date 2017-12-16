@@ -85,6 +85,7 @@ reloadTicker = function(dataRaw) {
 			"<td id='"+symbol+"-price-btc'>"+parseFloat(dataBTC.PRICE).toPrecision(3)+"</td>"+
 			"<td id='"+symbol+"-change-btc'>"+changeBTC+"</td>"+
 			"<td id='"+symbol+"-24h-change-btc'>"+parseFloat(dataBTC.CHANGE24HOUR).toPrecision(3)+"</td>"+
+			"<td id='"+symbol+"-24h-change-pct'>"+parseFloat(dataBTC.CHANGEPCT24HOUR).toPrecision(4)+"</td>"+
 			"<td id='"+symbol+"-update'>"+(new Date()).toLocaleTimeString()+"</td>"+
 			"<td id='"+symbol+"-hide'><button class='hider'>X</button></td>"
 		)

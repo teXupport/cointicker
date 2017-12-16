@@ -52,6 +52,7 @@
 				<th>Price (BTC)</th>
 				<th>Change (BTC)</th>
 				<th>24h Change (BTC)</th>
+				<th>24h Change (%)</th>
 				<th>Updated</th>
 				<th>Hide</th>
 			</tr>
