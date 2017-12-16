@@ -45,6 +45,7 @@
 	<h3>Featured Currencies</h3>
 	</div>
 	<div class="featured2ndrow">
+	<!--I was thinking we could display some of the major coins here, but I can't figure out how to pull the API data into the boxes. Layout isn't done but I was intending to show the symbol, name, price/usd below to the bottom right corner, a % change over 24hr (or 7 days?) in the top right of the box.</-->
 		<div class="featured-coin">
 		<h2>BTC</h2>
 		</div>
