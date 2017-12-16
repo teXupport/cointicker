@@ -20,18 +20,18 @@
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	</head>
 	<body>
-	<div class="jumbotron text-center">
-	<table class="table-responsive">
-			</tr>
-			<tr>
-				<td>
-				<button id="font-size-inc"><img width="24" height="24" src="res/includes/images/icons/zoom-in-icon.png"></button>
-				<button id="font-size-dec"><img width="24" height="24" src="res/includes/images/icons/zoom-out-icon.png"></button>
-				</td>
-				<td></td>
-				<td colspan="2"><input id="sym-text" /></td>
-				<td><button id="add-sym">Add Symbol</button></td>
-				<td>
+	<div class="page-header">
+		<div class="jumbotron text-center">
+			<table class="table-responsive">
+				</tr>
+				<tr>	
+					<td>
+					<button id="font-size-inc"><img width="24" height="24" src="res/includes/images/icons/zoom-in-icon.png"></button>
+					<button id="font-size-dec"><img width="24" height="24" src="res/includes/images/icons/zoom-out-icon.png"></button>
+					</td>
+					<td></td>
+					<td colspan="2"><input id="sym-text" /></td>
+					<td><button id="add-sym">Add Symbol</button></td>
 			</tr>
 			<tr>
 				<td colspan="3"><label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" /></td>
@@ -40,7 +40,30 @@
 		<h1>Cointicker</h1>
 		<p>All the Cryptocurrencies in one convenient location.</p>
 	</div>
-	<span class="separator"> </span>
+	</div>
+	<div class="featured1strow">
+	<h3>Featured Currencies</h3>
+	</div>
+	<div class="featured2ndrow">
+		<div class="featured-coin">
+		<h2>BTC</h2>
+		</div>
+		<div class="featured-coin">
+		<h2>ETH</h2>
+		</div>
+		<div class="featured-coin">
+		<h2>LTC</h2>
+		</div>
+		<div class="featured-coin">
+		<h2>XMR</h2>
+		</div>
+		<div class="featured-coin">
+		<h2>XRP</h2>
+		</div>
+		<div class="featured-coin">
+		<h2>ZEC</h2>
+		</div>
+	</div>
 	<div id="ticker">
 		<table id="coins-tb" class="table-responsivechart table-bordered">
 			<tr>

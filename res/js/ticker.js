@@ -151,7 +151,7 @@ $(function() {
 	//google.charts.setOnLoadCallback(drawChart);
 	
 	//blocking cross-domain at the moment
-	/*$.get("https://www.cryptocompare.com/api/data/coinlist/",
+	/*$.get("https://min-api.cryptocompare.com/data/all/coinlist",
 		function(data) {
 			console.log(data);
 			$.each(data.Data, function(index, value){

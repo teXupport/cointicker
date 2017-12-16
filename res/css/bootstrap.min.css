@@ -891,12 +891,44 @@ pre code {
     margin-right: -15px;
     margin-left: -15px
 }
+.featured1strow {
+
+    margin-right: 43%;
+    margin-left: 43%;
+	text-align: center;
+	color:#FFF;
+}
+.featured2ndrow {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+	justify-content: center;
+    width: 90%;
+	margin-right: 5%;
+	margin-left: 5%;
+}
 
 @media (min-width:576px) {
     .row {
         margin-right: -15px;
         margin-left: -15px
     }
+	.featured1strow {
+
+    margin-right: 43%;
+    margin-left: 43%;
+	text-align: center;
+	color:#FFF;
+	}
+	.featured2ndrow {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+	justify-content: center;
+    width: 90%;
+	margin-right: 5%;
+	margin-left: 5%;
+	}
 }
 
 @media (min-width:768px) {
@@ -904,6 +936,22 @@ pre code {
         margin-right: -15px;
         margin-left: -15px
     }
+	.featured1strow {
+
+    margin-right: 43%;
+    margin-left: 43%;
+	text-align: center;
+	color:#FFF;
+	}
+	.featured2ndrow {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+	justify-content: center;
+    width: 90%;
+	margin-right: 5%;
+	margin-left: 5%;
+	}
 }
 
 @media (min-width:992px) {
@@ -919,7 +967,6 @@ pre code {
         margin-left: -15px
     }
 }
-
 .no-gutters {
     margin-right: 0;
     margin-left: 0
@@ -1002,6 +1049,16 @@ pre code {
     padding-right: 15px;
     padding-left: 15px
 }
+.featured-coin {
+	background-color: #cccccc;
+    position: relative;
+    width: 15%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+	border: 2px solid grey;
+	border-radius: 4px;
+}
 
 @media (min-width:576px) {
     .col,
@@ -1072,6 +1129,16 @@ pre code {
         padding-right: 15px;
         padding-left: 15px
     }
+	.featured-coin {
+	background-color: #cccccc;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+	border: 2px solid grey;
+	border-radius: 4px;
+	max-width: 15%;
+}
 }
 
 @media (min-width:768px) {
@@ -1143,6 +1210,16 @@ pre code {
         padding-right: 15px;
         padding-left: 15px
     }
+	.featured-coin {
+	background-color: #cccccc;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+	border: 2px solid grey;
+	border-radius: 4px;
+	max-width: 15%;
+}
 }
 
 @media (min-width:992px) {
@@ -1214,6 +1291,16 @@ pre code {
         padding-right: 15px;
         padding-left: 15px
     }
+	.featured-coin {
+	background-color: #cccccc;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+	border: 2px solid grey;
+	border-radius: 4px;
+	max-width: 15%;
+}
 }
 
 @media (min-width:1200px) {
@@ -1285,6 +1372,16 @@ pre code {
         padding-right: 15px;
         padding-left: 15px
     }
+	.featured-coin {
+	background-color: #cccccc;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+	border: 2px solid grey;
+	border-radius: 4px;
+	max-width: 15%;
+}
 }
 
 .col {
