@@ -34,7 +34,7 @@
 					<td><button id="add-sym">Add Symbol</button></td>
 			</tr>
 			<tr>
-				<td colspan="3"><label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" /></td>
+				<td colspan="4"><label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" /></td>
 			</tr>
 		</table>
 		<h1>Cointicker</h1>
@@ -44,8 +44,8 @@
 	<div class="featured1strow">
 	<h3>Featured Currencies</h3>
 	</div>
-	<div class="featured2ndrow">
-	<!--I was thinking we could display some of the major coins here, but I can't figure out how to pull the API data into the boxes. Layout isn't done but I was intending to show the symbol, name, price/usd below to the bottom right corner, a % change over 24hr (or 7 days?) in the top right of the box.</-->
+	<!--<div class="featured2ndrow">
+	I was thinking we could display some of the major coins here, but I can't figure out how to pull the API data into the boxes. Layout isn't done but I was intending to show the symbol, name, price/usd below to the bottom right corner, a % change over 24hr (or 7 days?) in the top right of the box.
 		<div class="featured-coin">
 		<h2>BTC</h2>
 		</div>
@@ -64,7 +64,7 @@
 		<div class="featured-coin">
 		<h2>ZEC</h2>
 		</div>
-	</div>
+	</div></-->
 	<div id="ticker">
 		<table id="coins-tb" class="table-responsivechart table-bordered">
 			<tr>
@@ -77,6 +77,7 @@
 				<th>Change (BTC)</th>
 				<th>24h Change (BTC)</th>
 				<th>24h Change (%)</th>
+				<th>Market Cap</th>
 				<th>Updated</th>
 				<th>Hide</th>
 			</tr>

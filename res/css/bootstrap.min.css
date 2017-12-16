@@ -937,9 +937,10 @@ pre code {
         margin-left: -15px
     }
 	.featured1strow {
-
-    margin-right: 43%;
-    margin-left: 43%;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+	justify-content: center;
 	text-align: center;
 	color:#FFF;
 	}
@@ -948,10 +949,16 @@ pre code {
     display: -webkit-flex;
     display: -ms-flexbox;
 	justify-content: center;
+	text-align: center;
     width: 90%;
-	margin-right: 5%;
-	margin-left: 5%;
 	}
+#coins-tb {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+	justify-content: center;
+	text-align: center;
+	background-color: #cccccc;
 }
 
 @media (min-width:992px) {
@@ -2556,7 +2563,9 @@ pre code {
 
 .table-bordered td,
 .table-bordered th {
-    border: 1px solid #eceeef
+    border: 1px solid #eceeef;
+	text-align: center;
+	padding: 4px;
 }
 
 .table-bordered thead td,
@@ -2676,15 +2685,17 @@ pre code {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+	padding: 4px;
 }
 .table-responsivechart {
     display: block;
     width: 100%;
     overflow-x: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-	color: #FFF;
+	color: #292b2c;
 	border: 1px solid #eceeef;
+	padding: 4px;
 }
 .table-responsivechart.table-bordered {
     border: 0

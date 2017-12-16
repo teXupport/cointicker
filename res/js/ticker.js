@@ -16,7 +16,7 @@ updateSymbols = function(fsym) {
 	return temp;
 }
 
-fsym = ["BTC","ETH","LTC"]
+fsym = ["BTC","DASH","ETH","LTC","XMR","XRP"]
 fsymStr = updateSymbols(fsym);
 
 function drawChart() {
@@ -86,6 +86,7 @@ reloadTicker = function(dataRaw) {
 			"<td id='"+symbol+"-change-btc'>"+changeBTC+"</td>"+
 			"<td id='"+symbol+"-24h-change-btc'>"+parseFloat(dataBTC.CHANGE24HOUR).toPrecision(3)+"</td>"+
 			"<td id='"+symbol+"-24h-change-pct'>"+parseFloat(dataBTC.CHANGEPCT24HOUR).toPrecision(4)+"</td>"+
+			"<td id='"+symbol+"-market-cap'>"+parseFloat(dataBTC.MKTCAP).toPrecision(12)+"</td>"+
 			"<td id='"+symbol+"-update'>"+(new Date()).toLocaleTimeString()+"</td>"+
 			"<td id='"+symbol+"-hide'><button class='hider'>X</button></td>"
 		)
@@ -145,7 +146,6 @@ refreshCoins = function() {
 }
 
 $(function() {
-	$('#coins-tb').css('font-size', '1.2em');
 	
 	google.charts.load('current', {'packages':['corechart']});
 	//google.charts.setOnLoadCallback(drawChart);
@@ -172,7 +172,7 @@ $(function() {
 	});
 	
 	refreshCoins();
-	refresher = setInterval(refreshCoins, 5000);
+	refresher = setInterval(refreshCoins, 50000);
 	charter = setInterval(drawChart, 15000);
 	clearInterval(charter);
 	
