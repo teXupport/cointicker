@@ -1,5 +1,6 @@
 body {
-	background-color: rgb(180, 180, 180);
+	background-color: rgb(36,36,36);
+	color: #FFF;
 }
 
 span.separator {
@@ -15,4 +16,7 @@ span.separator {
 
 img.icon {
 	height: 1.5em;
+}
+jumbotron text-center {
+	color: #000!important;
 }
