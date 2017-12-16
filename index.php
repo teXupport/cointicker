@@ -33,36 +33,30 @@
 				<td><button id="add-sym">Add Symbol</button></td>
 				<td>
 			</tr>
-		</table>
-		<h1>Cointicker</h1>
-		<p>All the Cryptocurrencies in one convenient location.</p>
-
-		
-	</div>
-	<div id = "controls">
-		<table class="table-responsive">
 			<tr>
 				<td colspan="3"><label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" /></td>
 			</tr>
 		</table>
+		<h1>Cointicker</h1>
+		<p>All the Cryptocurrencies in one convenient location.</p>
 	</div>
 	<span class="separator"> </span>
-		<div id="ticker">
-			<table id="coins-tb" class="table-responsive table-bordered">
-				<tr>
-					<th>Symbol</th>
-					<th>Name</th>
-					<th>Price (USD)</th>
-					<th>Change (USD)</th>
-					<th>24h Change (USD)</th>
-					<th>Price (BTC)</th>
-					<th>Change (BTC)</th>
-					<th>24h Change (BTC)</th>
-					<th>Updated</th>
-					<th>Hide</th>
-				</tr>
-			</table>
-		</div>
+	<div id="ticker">
+		<table id="coins-tb" class="table-responsivechart table-bordered">
+			<tr>
+				<th>Symbol</th>
+				<th>Name</th>
+				<th>Price (USD)</th>
+				<th>Change (USD)</th>
+				<th>24h Change (USD)</th>
+				<th>Price (BTC)</th>
+				<th>Change (BTC)</th>
+				<th>24h Change (BTC)</th>
+				<th>Updated</th>
+				<th>Hide</th>
+			</tr>
+		</table>
+	</div>
 	</body>
 	<script src="./res/js/ticker.js"></script>
 </html>
