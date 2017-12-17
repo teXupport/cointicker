@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	<title>Custom Crypto Monitoring (cryptocompare.com API)</title>
+		<!--Meta Tags-->
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>Custom Crypto Monitoring (cryptocompare.com API)</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!--Styles-->
 		<link rel="stylesheet" href="http://www.atlasestateagents.co.uk/css/tether.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="res/css/bootstrap.min.css">
+		<link rel="stylesheet" href="res/css/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="./res/css/main.css">
+		<!--Scripts-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="./res/js/rawCoins.js"></script>
@@ -16,44 +20,69 @@
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	</head>
 	<body>
-		<div id = "controls">
+	<div class="page-header">
+		<div class="jumbotron text-center">
 			<table class="table-responsive">
-				<tr>
-					<td><button id="font-size-inc">Bigger Text</button></td>
-					<td><button id="font-size-dec">Smaller Text</button></td>
+				</tr>
+				<tr>	
+					<td>
+					<button id="font-size-inc"><img width="24" height="24" src="res/includes/images/icons/zoom-in-icon.png"></button>
+					<button id="font-size-dec"><img width="24" height="24" src="res/includes/images/icons/zoom-out-icon.png"></button>
+					</td>
 					<td></td>
-				</tr>
-				<tr>
-					<td colspan="3"><label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" /></td>
-				</tr>
-				<tr>
 					<td colspan="2"><input id="sym-text" /></td>
 					<td><button id="add-sym">Add Symbol</button></td>
-				</tr>
-			</table>
+			</tr>
+			<tr>
+				<td colspan="4"><label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" /></td>
+			</tr>
+		</table>
+		<h1>Cointicker</h1>
+		<p>All the Cryptocurrencies in one convenient location.</p>
+	</div>
+	</div>
+	<div class="featured1strow">
+	<h3>Featured Currencies</h3>
+	</div>
+	<!--<div class="featured2ndrow">
+	I was thinking we could display some of the major coins here, but I can't figure out how to pull the API data into the boxes. Layout isn't done but I was intending to show the symbol, name, price/usd below to the bottom right corner, a % change over 24hr (or 7 days?) in the top right of the box.
+		<div class="featured-coin">
+		<h2>BTC</h2>
 		</div>
-		<span class="separator"> </span>
-		<div id="ticker">
-			<table id="coins-tb" class="table-responsive table-bordered">
-				<tr>
-					<th>Symbol</th>
-					<th>Name</th>
-					<th>Price (USD)</th>
-					<th>Change (USD)</th>
-					<th>24h Change (USD)</th>
-					<th>Price (BTC)</th>
-					<th>Change (BTC)</th>
-					<th>24h Change (BTC)</th>
-					<th>Updated</th>
-					<th>Hide</th>
-				</tr>
-			</table>
+		<div class="featured-coin">
+		<h2>ETH</h2>
 		</div>
+		<div class="featured-coin">
+		<h2>LTC</h2>
+		</div>
+		<div class="featured-coin">
+		<h2>XMR</h2>
+		</div>
+		<div class="featured-coin">
+		<h2>XRP</h2>
+		</div>
+		<div class="featured-coin">
+		<h2>ZEC</h2>
+		</div>
+	</div></-->
+	<div id="ticker">
+		<table id="coins-tb" class="table-responsivechart table-bordered">
+			<tr>
+				<th>Symbol</th>
+				<th>Name</th>
+				<th>Price (USD)</th>
+				<th>Change (USD)</th>
+				<th>24h Change (USD)</th>
+				<th>Price (BTC)</th>
+				<th>Change (BTC)</th>
+				<th>24h Change (BTC)</th>
+				<th>24h Change (%)</th>
+				<th>Market Cap</th>
+				<th>Updated</th>
+				<th>Hide</th>
+			</tr>
+		</table>
+	</div>
 	</body>
-	<style>
-		body {
-			background-color: rgb(180, 180, 180);
-		}
-	</style>
 	<script src="./res/js/ticker.js"></script>
 </html>
