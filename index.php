@@ -83,6 +83,7 @@
 			</tr>
 		</table>
 	</div>
+	<div id="chart-container"></div>
 	</body>
 	<script src="./res/js/ticker.js"></script>
 </html>

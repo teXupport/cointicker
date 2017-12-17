@@ -1,7 +1,11 @@
-symLib = [];
-nameLib = [];
-imageLib = [];
-chart = [];
+var symLib = [];
+var nameLib = [];
+var imageLib = [];
+var chart = [];
+
+//constants
+const COIN_REFRESH_INTERVAL = 5000;
+const CHART_REFRESH_INTERVAL = 15000;
 
 updateSymbols = function(fsym) {
 	var temp = "";
@@ -34,16 +38,17 @@ function drawChart() {
 					points[symbol][x][4] = value.close;
 				});
 				
+				options = {
+					legend:'none',
+					title: symbol
+				};
+				
 				gTab = google.visualization.arrayToDataTable(points[symbol], true);
 				chart[symbol] = new google.visualization.CandlestickChart(document.getElementById(symbol+'-24h-chart-div'));
 				chart[symbol].draw(gTab, options);
 			},
 			"json"
 		);
-		
-		options = {
-			legend:'none'
-		};
 	});
 }
 
@@ -92,7 +97,7 @@ reloadTicker = function(dataRaw) {
 		)
 		
 		if(!$('#'+symbol+'-24h-chart-div').length) {
-			$('#'+symbol).after("<div id='"+symbol+"-24h-chart-div' class='chart' style='display:none'></div>");
+			$('#chart-container').append("<></><div id='"+symbol+"-24h-chart-div' class='chart' style='display:none'></div>");
 		}
 		
 		$('#'+symbol+'-hide').find('.hider').click(function() {
@@ -172,8 +177,8 @@ $(function() {
 	});
 	
 	refreshCoins();
-	refresher = setInterval(refreshCoins, 50000);
-	charter = setInterval(drawChart, 15000);
+	refresher = setInterval(refreshCoins, COIN_REFRESH_INTERVAL);
+	charter = setInterval(drawChart, CHART_REFRESH_INTERVAL);
 	clearInterval(charter);
 	
 	//attach buttons
@@ -189,7 +194,7 @@ $(function() {
 		if($(this).prop('checked')) {
 			$('.chart').show();
 			drawChart();
-			setInterval(drawChart, 15000);
+			setInterval(drawChart, CHART_REFRESH_INTERVAL);
 		} else {
 			$('.chart').hide();
 			clearInterval(drawChart);
@@ -216,10 +221,10 @@ $(function() {
 		clearInterval(refresher);
 		clearInterval(charter);
 		refreshCoins();
-		refresher = setInterval(refreshCoins, 5000);
+		refresher = setInterval(refreshCoins, COIN_REFRESH_INTERVAL);
 		if($('#chart-control').prop('checked')) {
 			drawChart();
-			charter = setInterval(drawChart, 15000);
+			charter = setInterval(drawChart, CHART_REFRESH_INTERVAL);
 		}
 	}
 });
