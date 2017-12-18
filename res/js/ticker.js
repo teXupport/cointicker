@@ -53,24 +53,33 @@ function drawChart() {
 	var points = [];
 	$.each(fsym, function(i, symbol) {
 		points[symbol] = [];
-		$.get("https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym="+symbol+"&limit=365&tryConversion=false&tsym=USD",
+		$.get("https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym="+symbol+"&limit=21&tryConversion=false&tsym=USD",
+		
 			function(data) {
+				
 				$.each(data.Data, function(x, value) {
 					points[symbol][x] = [];
-					points[symbol][x][0] = (new Date(parseInt(value.time))).toLocaleTimeString();
-					points[symbol][x][1] = value.open;
-					points[symbol][x][2] = value.low;
-					points[symbol][x][3] = value.high;
-					points[symbol][x][4] = value.close;
+					points[symbol][x][0] = new Date(value.time*1000).toString();
+					points[symbol][x][1] = value.close;
 				});
 				
-				options = {
-					legend:'none',
-					title: symbol
-				};
-				
+				var options = {
+					'legend': 'none',
+					'title': symbol,
+					'width': 700,
+					'height': 500,
+					'backgroundColor': 'rgb(36,36,36)',
+					hAxis: {
+					textStyle:{color: '#FFF'}
+					},
+					vAxis: {
+					textStyle:{color: '#FFF'},
+					//gridlines: {color: 'transparent'}
+					},
+					'areaOpacity':'0.7',
+				}
 				gTab = google.visualization.arrayToDataTable(points[symbol], true);
-				chart[symbol] = new google.visualization.CandlestickChart(document.getElementById(symbol+'-24h-chart-div'));
+				chart[symbol] = new google.visualization.AreaChart(document.getElementById(symbol+'-24h-chart-div'));
 				chart[symbol].draw(gTab, options);
 			},
 			"json"
