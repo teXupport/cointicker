@@ -23,7 +23,6 @@
 	<div class="page-header">
 		<div class="jumbotron text-center">
 			<table class="table-responsive">
-				</tr>
 				<tr>	
 					<td>
 					<button id="font-size-inc"><img width="24" height="24" src="res/includes/images/icons/zoom-in-icon.png"></button>
@@ -39,32 +38,129 @@
 		</table>
 		<h1>Cointicker</h1>
 		<p>All the Cryptocurrencies in one convenient location.</p>
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#dataTables" aria-expanded="false" aria-controls="collapseExample">
+    Cryptocurrency Data Tables
+	</button>
+	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#datacharts" aria-expanded="false" aria-controls="collapseExample" for="chart-control">
+    Cryptocurrency Historical Charts
+	</button>
 	</div>
 	</div>
 	<div class="featured1strow">
 	<h3>Featured Currencies</h3>
 	</div>
-	<!--<div class="featured2ndrow">
-	I was thinking we could display some of the major coins here, but I can't figure out how to pull the API data into the boxes. Layout isn't done but I was intending to show the symbol, name, price/usd below to the bottom right corner, a % change over 24hr (or 7 days?) in the top right of the box.
+		<div class="featured2ndrow">
 		<div class="featured-coin">
-		<h2>BTC</h2>
+		<script type="text/javascript">
+		baseUrl = "https://widgets.cryptocompare.com/";
+		var scripts = document.getElementsByTagName("script");
+		var embedder = scripts[ scripts.length - 1 ];
+		var cccTheme = {"General":{"background":"#333","borderColor":"#545454","borderRadius":"4px 4px 0 0"},"Header":{"background":"#000","color":"#FFF","displayFollowers":false},"Followers":{"background":"#f7931a","color":"#FFF","borderColor":"#e0bd93","counterBorderColor":"#fdab48","counterColor":"#f5d7b2"},"Data":{"priceColor":"#FFF","infoLabelColor":"#CCC","infoValueColor":"#CCC"},"Chart":{"animation":true,"fillColor":"rgba(86,202,158,0.5)","borderColor":"#56ca9e"},"Conversion":{"background":"#000","color":"#999"}};
+		(function (){
+		var appName = encodeURIComponent(window.location.hostname);
+		if(appName==""){appName="local";}
+		var s = document.createElement("script");
+		s.type = "text/javascript";
+		s.async = true;
+		var theUrl = baseUrl+'serve/v2/coin/chart?fsym=BTC&tsym=USD&period=1W';
+		s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+		embedder.parentNode.appendChild(s);
+		})();
+		</script>
 		</div>
 		<div class="featured-coin">
-		<h2>ETH</h2>
+		<script type="text/javascript">
+		baseUrl = "https://widgets.cryptocompare.com/";
+		var scripts = document.getElementsByTagName("script");
+		var embedder = scripts[ scripts.length - 1 ];
+		var cccTheme = {"General":{"background":"#333","borderColor":"#545454","borderRadius":"4px 4px 0 0"},"Header":{"background":"#000","color":"#FFF","displayFollowers":false},"Followers":{"background":"#f7931a","color":"#FFF","borderColor":"#e0bd93","counterBorderColor":"#fdab48","counterColor":"#f5d7b2"},"Data":{"priceColor":"#FFF","infoLabelColor":"#CCC","infoValueColor":"#CCC"},"Chart":{"animation":true,"fillColor":"rgba(86,202,158,0.5)","borderColor":"#56ca9e"},"Conversion":{"background":"#000","color":"#999"}};
+		(function (){
+		var appName = encodeURIComponent(window.location.hostname);
+		if(appName==""){appName="local";}
+		var s = document.createElement("script");
+		s.type = "text/javascript";
+		s.async = true;
+		var theUrl = baseUrl+'serve/v2/coin/chart?fsym=ETH&tsym=USD&period=1W';
+		s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+		embedder.parentNode.appendChild(s);
+		})();
+		</script>
+
 		</div>
 		<div class="featured-coin">
-		<h2>LTC</h2>
+		<script type="text/javascript">
+		baseUrl = "https://widgets.cryptocompare.com/";
+		var scripts = document.getElementsByTagName("script");
+		var embedder = scripts[ scripts.length - 1 ];
+		var cccTheme = {"General":{"background":"#333","borderColor":"#545454","borderRadius":"4px 4px 0 0"},"Header":{"background":"#000","color":"#FFF","displayFollowers":false},"Followers":{"background":"#f7931a","color":"#FFF","borderColor":"#e0bd93","counterBorderColor":"#fdab48","counterColor":"#f5d7b2"},"Data":{"priceColor":"#FFF","infoLabelColor":"#CCC","infoValueColor":"#CCC"},"Chart":{"animation":true,"fillColor":"rgba(86,202,158,0.5)","borderColor":"#56ca9e"},"Conversion":{"background":"#000","color":"#999"}};
+		(function (){
+		var appName = encodeURIComponent(window.location.hostname);
+		if(appName==""){appName="local";}
+		var s = document.createElement("script");
+		s.type = "text/javascript";
+		s.async = true;
+		var theUrl = baseUrl+'serve/v2/coin/chart?fsym=LTC&tsym=USD&period=1W';
+		s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+		embedder.parentNode.appendChild(s);
+		})();
+		</script>
 		</div>
 		<div class="featured-coin">
-		<h2>XMR</h2>
+		<script type="text/javascript">
+		baseUrl = "https://widgets.cryptocompare.com/";
+		var scripts = document.getElementsByTagName("script");
+		var embedder = scripts[ scripts.length - 1 ];
+		var cccTheme = {"General":{"background":"#333","borderColor":"#545454","borderRadius":"4px 4px 0 0"},"Header":{"background":"#000","color":"#FFF","displayFollowers":false},"Followers":{"background":"#f7931a","color":"#FFF","borderColor":"#e0bd93","counterBorderColor":"#fdab48","counterColor":"#f5d7b2"},"Data":{"priceColor":"#FFF","infoLabelColor":"#CCC","infoValueColor":"#CCC"},"Chart":{"animation":true,"fillColor":"rgba(86,202,158,0.5)","borderColor":"#56ca9e"},"Conversion":{"background":"#000","color":"#999"}};
+		(function (){
+		var appName = encodeURIComponent(window.location.hostname);
+		if(appName==""){appName="local";}
+		var s = document.createElement("script");
+		s.type = "text/javascript";
+		s.async = true;
+		var theUrl = baseUrl+'serve/v2/coin/chart?fsym=XMR&tsym=USD&period=1W';
+		s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+		embedder.parentNode.appendChild(s);
+		})();
+		</script>
 		</div>
 		<div class="featured-coin">
-		<h2>XRP</h2>
+				<script type="text/javascript">
+		baseUrl = "https://widgets.cryptocompare.com/";
+		var scripts = document.getElementsByTagName("script");
+		var embedder = scripts[ scripts.length - 1 ];
+		var cccTheme = {"General":{"background":"#333","borderColor":"#545454","borderRadius":"4px 4px 0 0"},"Header":{"background":"#000","color":"#FFF","displayFollowers":false},"Followers":{"background":"#f7931a","color":"#FFF","borderColor":"#e0bd93","counterBorderColor":"#fdab48","counterColor":"#f5d7b2"},"Data":{"priceColor":"#FFF","infoLabelColor":"#CCC","infoValueColor":"#CCC"},"Chart":{"animation":true,"fillColor":"rgba(86,202,158,0.5)","borderColor":"#56ca9e"},"Conversion":{"background":"#000","color":"#999"}};
+		(function (){
+		var appName = encodeURIComponent(window.location.hostname);
+		if(appName==""){appName="local";}
+		var s = document.createElement("script");
+		s.type = "text/javascript";
+		s.async = true;
+		var theUrl = baseUrl+'serve/v2/coin/chart?fsym=XRP&tsym=USD&period=1W';
+		s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+		embedder.parentNode.appendChild(s);
+		})();
+		</script>
 		</div>
 		<div class="featured-coin">
-		<h2>ZEC</h2>
+				<script type="text/javascript">
+		baseUrl = "https://widgets.cryptocompare.com/";
+		var scripts = document.getElementsByTagName("script");
+		var embedder = scripts[ scripts.length - 1 ];
+		var cccTheme = {"General":{"background":"#333","borderColor":"#545454","borderRadius":"4px 4px 0 0"},"Header":{"background":"#000","color":"#FFF","displayFollowers":false},"Followers":{"background":"#f7931a","color":"#FFF","borderColor":"#e0bd93","counterBorderColor":"#fdab48","counterColor":"#f5d7b2"},"Data":{"priceColor":"#FFF","infoLabelColor":"#CCC","infoValueColor":"#CCC"},"Chart":{"animation":true,"fillColor":"rgba(86,202,158,0.5)","borderColor":"#56ca9e"},"Conversion":{"background":"#000","color":"#999"}};
+		(function (){
+		var appName = encodeURIComponent(window.location.hostname);
+		if(appName==""){appName="local";}
+		var s = document.createElement("script");
+		s.type = "text/javascript";
+		s.async = true;
+		var theUrl = baseUrl+'serve/v2/coin/chart?fsym=ZEC&tsym=USD&period=1W';
+		s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+		embedder.parentNode.appendChild(s);
+		})();
+		</script>
 		</div>
-	</div></-->
+	</div>
+	<div class="collapse" id="dataTables">
 	<div id="ticker">
 		<table id="coins-tb" class="table-responsivechart table-bordered">
 			<tr>
@@ -83,7 +179,10 @@
 			</tr>
 		</table>
 	</div>
+	</div>
+	<div class="collapse" id="datacharts">
 	<div id="chart-container"></div>
+	</div>
 	</body>
 	<script src="./res/js/ticker.js"></script>
 </html>
