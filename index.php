@@ -77,7 +77,7 @@
 				<th>Change (BTC)</th>
 				<th>24h Change (BTC)</th>
 				<th>24h Change (%)</th>
-				<th>Market Cap</th>
+				<th>Market Cap (BTC)</th>
 				<th>Updated</th>
 				<th>Hide</th>
 			</tr>

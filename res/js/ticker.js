@@ -2,12 +2,39 @@ var symLib = [];
 var nameLib = [];
 var imageLib = [];
 var chart = [];
+var fsym = ["BTC","DASH","ETH","LTC","XMR","XRP"];
 
 //constants
 const COIN_REFRESH_INTERVAL = 5000;
 const CHART_REFRESH_INTERVAL = 15000;
 
-updateSymbols = function(fsym) {
+//from W3
+sortTable = function() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  $table = $('#coins-tb');
+  switching = true;
+  
+  while (switching) {
+    switching = false;
+    $rows = $table.children('tbody').children();
+	
+    for (i = 1; i < ($rows.length-1); i++) {
+      shouldSwitch = false;
+	  
+      if ($($rows.get(i)).prop('id') > $($rows.get(i+1)).prop('id')) {
+        shouldSwitch= true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      $($rows.get(i)).insertAfter($($rows.get(i+1)));
+      switching = true;
+    }
+  }
+}
+
+updateSymbols = function() {
+	fsym.sort();
 	var temp = "";
 	$.each(fsym, function(index, value){
 		if(index == 0) {
@@ -20,8 +47,7 @@ updateSymbols = function(fsym) {
 	return temp;
 }
 
-fsym = ["BTC","DASH","ETH","LTC","XMR","XRP"]
-fsymStr = updateSymbols(fsym);
+var fsymStr = updateSymbols();
 
 function drawChart() {
 	var points = [];
@@ -58,8 +84,18 @@ reloadTicker = function(dataRaw) {
 	
 	if(dataRaw) {
 		symbol = dataUSD.FROMSYMBOL;
-		prevUSD = parseFloat($('#'+symbol+'-price').text());
 		curUSD = dataUSD.PRICE;
+		curBTC = dataBTC.PRICE;
+		
+		if(!$('#'+symbol).length) {
+			$('#coins-tb').append($(document.createElement("TR")).prop('id', symbol));
+			prevUSD = curUSD;
+			prevBTC = curBTC;
+		} else {
+			prevUSD = parseFloat($('#'+symbol+'-price').text());
+			prevBTC = parseFloat($('#'+symbol+'-price').text());
+		}
+		
 		changeUSD = " ";
 		if(curUSD > prevUSD) {
 			changeUSD = "+"+(curUSD-prevUSD).toFixed(2);
@@ -67,8 +103,6 @@ reloadTicker = function(dataRaw) {
 			changeUSD = "-"+(prevUSD-curUSD).toFixed(2);
 		}
 		
-		prevBTC = parseFloat($('#'+symbol+'-price').text());
-		curBTC = dataBTC.PRICE;
 		changeBTC = " ";
 		if(curBTC > prevBTC) {
 			changeBTC = "+"+(curBTC-prevBTC).toPrecision(3);
@@ -97,19 +131,16 @@ reloadTicker = function(dataRaw) {
 		)
 		
 		if(!$('#'+symbol+'-24h-chart-div').length) {
-			$('#chart-container').append("<></><div id='"+symbol+"-24h-chart-div' class='chart' style='display:none'></div>");
+			$('#chart-container').append("<div id='"+symbol+"-24h-chart-div' class='chart' style='display:none'></div>");
 		}
 		
 		$('#'+symbol+'-hide').find('.hider').click(function() {
 			$this = $(this);
-			$this.parents('tr').html('');
-			$this.parents('tr').hide();
+			$this.parents('tr').remove();
 			symbol = $this.parent().prop('id').split('-')[0];
-			console.log(symbol);
 			$('#'+symbol+'-24h-chart-div').remove();
-			console.log(fsym.indexOf(symbol));
-			console.log(fsym.splice(fsym.indexOf(symbol), 1));
-			fsymStr = updateSymbols(fsym);
+			fsym.splice(fsym.indexOf(symbol, 1));
+			fsymStr = updateSymbols();
 			reboot();
 		});
 		
@@ -129,6 +160,8 @@ reloadTicker = function(dataRaw) {
 		} else {
 			$('#'+symbol+'-change-btc').css('color', 'black');
 		}
+		
+		sortTable();
 	}
 	return;
 }
@@ -172,14 +205,32 @@ $(function() {
 		imageLib[value.Symbol] = value.ImageUrl;
 	});
 	
-	$.each(symLib, function(index, value) {
-		$('#coins-tb').append('<tr id="'+value+'" style="display:none"></tr>');
-	});
+/* Removed for dynamic creation #5 */
+//	$.each(symLib, function(index, value) {
+//		$('#coins-tb').append('<tr id="'+value+'" style="display:none"></tr>');
+//	});
 	
 	refreshCoins();
 	refresher = setInterval(refreshCoins, COIN_REFRESH_INTERVAL);
 	charter = setInterval(drawChart, CHART_REFRESH_INTERVAL);
 	clearInterval(charter);
+	
+	if($('#chart-control').prop('checked')) {
+		drawChart();
+		charter = setInterval(drawChart, CHART_REFRESH_INTERVAL);
+	}
+	
+	//set full refresh function
+	reboot = function() {
+		clearInterval(refresher);
+		clearInterval(charter);
+		refreshCoins();
+		refresher = setInterval(refreshCoins, COIN_REFRESH_INTERVAL);
+		if($('#chart-control').prop('checked')) {
+			drawChart();
+			charter = setInterval(drawChart, CHART_REFRESH_INTERVAL);
+		}
+	}
 	
 	//attach buttons
 	$('#font-size-inc').click(function(){
@@ -203,7 +254,8 @@ $(function() {
 	$('#add-sym').click(function(){
 		if(symLib.indexOf($('#sym-text').val()) >= 0) {
 			fsym.push($('#sym-text').val());
-			fsymStr = updateSymbols(fsym);
+			fsymStr = updateSymbols();
+			sortTable();
 			reboot();
 			$('#sym-text').val('');
 		} else {
@@ -215,16 +267,4 @@ $(function() {
 	$('#sym-text').autocomplete({
 		source: symLib
 	});
-	
-	//set full refresh function
-	reboot = function() {
-		clearInterval(refresher);
-		clearInterval(charter);
-		refreshCoins();
-		refresher = setInterval(refreshCoins, COIN_REFRESH_INTERVAL);
-		if($('#chart-control').prop('checked')) {
-			drawChart();
-			charter = setInterval(drawChart, CHART_REFRESH_INTERVAL);
-		}
-	}
 });
