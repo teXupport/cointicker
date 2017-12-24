@@ -2,7 +2,7 @@ var symLib = [];
 var nameLib = [];
 var imageLib = [];
 var chart = [];
-var fsym = ["BTC","DASH","ETH","LTC","XMR","XRP"];
+var fsym = ["BTC","DASH","ETH","LTC","XMR","XRP","XVG"];
 
 //constants
 const COIN_REFRESH_INTERVAL = 5000;
@@ -75,6 +75,9 @@ function drawChart() {
 					vAxis: {
 					textStyle:{color: '#FFF'},
 					//gridlines: {color: 'transparent'}
+					},
+					titleTextStyle: {
+					color: '#FFF'
 					},
 					'areaOpacity':'0.7',
 				}

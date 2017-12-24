@@ -929,6 +929,14 @@ pre code {
 	margin-left: 5%;
 	}
 }
+#coins-tb {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+	justify-content: center;
+	text-align: center;
+	background-color: #cccccc;
+}
 
 @media (min-width:768px) {
     .row {

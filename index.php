@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<title>Custom Crypto Monitoring (cryptocompare.com API)</title>
+	<title>Cryptocurrency Monitoring (cryptocompare.com API)</title>
 		<!--Meta Tags-->
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,9 +22,10 @@
 	<body>
 	<div class="jumbotron text-center" id="header">
 		<div class="row">
-			<div class="col-sm-1"><input id="sym-text" placeholder="Search Symbol"/></div>
-			<div class="col-sm-1"><button id="add-sym">Add Symbol</button></div>
-			<div class="col-sm-8">
+			<div class="col-sm-3"><input id="sym-text" placeholder="Search Symbol"/><button id="add-sym">Add Symbol</button></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
 			<h1>Cointicker</h1>
 			<p>All the Cryptocurrencies in one convenient location.</p>
 			<label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" />
