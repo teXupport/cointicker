@@ -20,51 +20,36 @@
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	</head>
 	<body>
-	<div class="page-header">
-		<div class="jumbotron text-center">
-			<table class="table-responsive">
-				</tr>
-				<tr>	
-					<td>
-					<button id="font-size-inc"><img width="24" height="24" src="res/includes/images/icons/zoom-in-icon.png"></button>
-					<button id="font-size-dec"><img width="24" height="24" src="res/includes/images/icons/zoom-out-icon.png"></button>
-					</td>
-					<td></td>
-					<td colspan="2"><input id="sym-text" /></td>
-					<td><button id="add-sym">Add Symbol</button></td>
-			</tr>
-			<tr>
-				<td colspan="4"><label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" /></td>
-			</tr>
-		</table>
-		<h1>Cointicker</h1>
-		<p>All the Cryptocurrencies in one convenient location.</p>
+	<div class="jumbotron text-center" id="header">
+		<div class="row">
+			<div class="col-sm-1"><input id="sym-text" placeholder="Search Symbol"/></div>
+			<div class="col-sm-1"><button id="add-sym">Add Symbol</button></div>
+			<div class="col-sm-8">
+			<h1>Cointicker</h1>
+			<p>All the Cryptocurrencies in one convenient location.</p>
+			<label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" />
+			</div>
+		</div>
+
+		<br>
+		<ul class="nav nav-tabs">
+			<li class="nav-item">
+			<a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#tables">Data Tables</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#charts">Historical Charts</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#pools">Cointicker Pools</a>
+			</li>
+		</ul>
 	</div>
-	</div>
-	<div class="featured1strow">
-	<h3>Featured Currencies</h3>
-	</div>
-	<!--<div class="featured2ndrow">
-	I was thinking we could display some of the major coins here, but I can't figure out how to pull the API data into the boxes. Layout isn't done but I was intending to show the symbol, name, price/usd below to the bottom right corner, a % change over 24hr (or 7 days?) in the top right of the box.
-		<div class="featured-coin">
-		<h2>BTC</h2>
-		</div>
-		<div class="featured-coin">
-		<h2>ETH</h2>
-		</div>
-		<div class="featured-coin">
-		<h2>LTC</h2>
-		</div>
-		<div class="featured-coin">
-		<h2>XMR</h2>
-		</div>
-		<div class="featured-coin">
-		<h2>XRP</h2>
-		</div>
-		<div class="featured-coin">
-		<h2>ZEC</h2>
-		</div>
-	</div></-->
+	<div class="tab-content">
+	<div class="tab-pane active container" id="home">Home</div>
+	<div class="tab-pane container" id="tables">
 	<div id="ticker">
 		<table id="coins-tb" class="table-responsivechart table-bordered">
 			<tr>
@@ -83,7 +68,10 @@
 			</tr>
 		</table>
 	</div>
+	</div>
+	<div class="tab-pane container" id="charts">Charts</div>
 	<div id="chart-container"></div>
+	<div class="tab-pane container" id="pools">Pools</div>
 	</body>
 	<script src="./res/js/ticker.js"></script>
 </html>

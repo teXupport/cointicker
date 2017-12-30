@@ -892,7 +892,6 @@ pre code {
     margin-left: -15px
 }
 .featured1strow {
-
     margin-right: 43%;
     margin-left: 43%;
 	text-align: center;
@@ -1057,14 +1056,11 @@ pre code {
     padding-left: 15px
 }
 .featured-coin {
-	background-color: #cccccc;
     position: relative;
     width: 15%;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-	border: 2px solid grey;
-	border-radius: 4px;
 }
 
 @media (min-width:576px) {
@@ -1137,13 +1133,10 @@ pre code {
         padding-left: 15px
     }
 	.featured-coin {
-	background-color: #cccccc;
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-	border: 2px solid grey;
-	border-radius: 4px;
 	max-width: 15%;
 }
 }
@@ -1218,13 +1211,10 @@ pre code {
         padding-left: 15px
     }
 	.featured-coin {
-	background-color: #cccccc;
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-	border: 2px solid grey;
-	border-radius: 4px;
 	max-width: 15%;
 }
 }
@@ -1299,13 +1289,10 @@ pre code {
         padding-left: 15px
     }
 	.featured-coin {
-	background-color: #cccccc;
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-	border: 2px solid grey;
-	border-radius: 4px;
 	max-width: 15%;
 }
 }
@@ -1380,13 +1367,10 @@ pre code {
         padding-left: 15px
     }
 	.featured-coin {
-	background-color: #cccccc;
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-	border: 2px solid grey;
-	border-radius: 4px;
 	max-width: 15%;
 }
 }
@@ -2686,7 +2670,6 @@ pre code {
     width: 100%;
     overflow-x: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-	padding: 4px;
 }
 .table-responsivechart {
     display: block;
@@ -5475,14 +5458,16 @@ a.badge:hover {
 
 .jumbotron {
     padding: 1rem 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     background-color: #eceeef;
-    border-radius: .3rem
+    border-radius: .3rem;
+	height: 10%;
 }
 
 @media (min-width:576px) {
     .jumbotron {
-        padding: 1rem 1rem
+        padding: 1rem 1rem;
+		height: 10%;
     }
 }
 

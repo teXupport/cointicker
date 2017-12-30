@@ -1,0 +1,29 @@
+#header {
+	height: 10%;
+	color: rgb(36,36,36);
+}
+body {
+	background-color: rgb(36,36,36);
+	color: #FFF;
+}
+img.icon {
+	height: 1.5em;
+}
+.cointable {
+	display: block;
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+	color: #FFF;
+	border: 1px solid #eceeef;
+	padding: 4px;
+}
+#cointable {
+	border: 1px solid #eceeef;
+	text-align: center;
+	padding: 4px;
+}
+#tables {
+	background-color: #cccccc;
+	width: 100%;
+}
