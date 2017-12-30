@@ -1,4 +1,6 @@
-body {
+page-header {
+	height: 10%;
+}body {
 	background-color: rgb(36,36,36);
 }
 
@@ -9,8 +11,7 @@ span.separator {
 }
 
 .chart {
-	height: 12em;
-	width: 20em;
+
 }
 
 img.icon {
