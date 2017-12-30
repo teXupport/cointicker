@@ -19,21 +19,21 @@
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate-css/animate.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="http://www.atlasestateagents.co.uk/css/tether.min.css">
+  <link src="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link src="lib/animate-css/animate.min.css" rel="stylesheet">
+  <link src="lib/tether/tether.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="lib/css/style.css" rel="stylesheet">
   
-  <!--Ticker & Coin Styles -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="js/rawCoins.js"></script>
-	<script src="js/init.js"></script>
-	<script src="js/ticker.js"></script>
-	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-	<script src="https://www.gstatic.com/charts/loader.js"></script>
+  <!--Ticker & Coin Javascript (must remain at top) -->
+  <script src="lib/charts/loader.js"></script>
+  <script src="lib/jquery/jquery-ui.js"></script>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/api/rawCoins.js"></script>
+  <script src="lib/api/ticker.js"></script>
+  <script src="lib/tether/tether.min.js"></script>
+
 </head>
 
 <body>
@@ -360,7 +360,7 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- Required JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
+
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/superfish/hoverIntent.js"></script>
   <script src="lib/superfish/superfish.min.js"></script>
@@ -368,9 +368,7 @@
   <script src="lib/wow/wow.min.js"></script>
   <script src="lib/stickyjs/sticky.js"></script>
   <script src="lib/easing/easing.js"></script>
-
-  <!-- Custom Javascript File -->
-  <script src="js/custom.js"></script>
+  <script src="lib/custom.js"></script>
 
 </body>
 </html>
