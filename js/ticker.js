@@ -66,8 +66,8 @@ function drawChart() {
 				var options = {
 					'legend': 'none',
 					'title': symbol,
-					'width': 500,
-					'height': 300,
+					'width': 700,
+					'height': 500,
 					'backgroundColor': 'rgb(36,36,36)',
 					hAxis: {
 					textStyle:{color: '#FFF'}

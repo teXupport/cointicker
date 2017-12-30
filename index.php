@@ -153,7 +153,6 @@
 
       <div class="row">
 	  <p>Placeholder</p>
-	  <div class="chart-container" id="chart-container"></div>
       </div>
     </div>
 	<div class="section-divider"></div>
