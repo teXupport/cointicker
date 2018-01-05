@@ -15,6 +15,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
+  <!-- Custom.js -->
+  <script src="lib/custom.js"></script>
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -24,14 +26,14 @@
   <link href="lib/tether/tether.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="lib/css/style.css" rel="stylesheet">
+  <link href="lib/css/style.min.css" rel="stylesheet">
   
   <!--Ticker & Coin Javascript (must remain at top) -->
   <script src="lib/charts/loader.js"></script>
-  <script src="lib/jquery/jquery-ui.js"></script>
   <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-ui.min.js"></script>
   <script src="lib/api/rawCoins.js"></script>
-  <script src="lib/api/ticker.js"></script>
+  <script src="lib/api/ticker.min.js"></script>
   <script src="lib/tether/tether.min.js"></script>
 
 </head>
@@ -44,7 +46,7 @@
   ============================-->
   <section id="welcome">
       <video autoplay loop muted poster="" id="vid">
-    <source src="img/StarsSpaceBackground.mp4" type="video/mp4">
+    <source src="lib/img/StarsSpaceBackground.mp4" type="video/mp4">
     </video>
     <div class="welcome-container">
       <div class="wow fadeIn">
@@ -362,13 +364,13 @@
   <!-- Required JavaScript Libraries -->
 
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/hoverIntent.min.js"></script>
   <script src="lib/superfish/superfish.min.js"></script>
   <script src="lib/morphext/morphext.min.js"></script>
   <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/stickyjs/sticky.js"></script>
+  <script src="lib/stickyjs/sticky.min.js"></script>
   <script src="lib/easing/easing.js"></script>
-  <script src="lib/custom.js"></script>
+  
 
 </body>
 </html>
