@@ -19,9 +19,9 @@
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link src="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link src="lib/animate-css/animate.min.css" rel="stylesheet">
-  <link src="lib/tether/tether.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate-css/animate.min.css" rel="stylesheet">
+  <link href="lib/tether/tether.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
   <link href="lib/css/style.css" rel="stylesheet">
