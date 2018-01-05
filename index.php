@@ -3,20 +3,34 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Cointicker - Elegant Cryptocurrency Monitoring</title>
+  <title>CryptoCrawler - Elegant Cryptocurrency Monitoring</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="Cryptocurrency, altcoin, bitcoin, litecoin, ethereum" name="keywords">
+  <meta content="CryptoCrawler, Cryptocurrency, altcoin, bitcoin, litecoin, ethereum" name="keywords">
   <meta content="Simple but elegant Cryptocurrency Monitoring" name="description">
   <meta content="Dalen & Tyler" name="author">
+  <meta name="robots" content="index, follow">
 
-  <!-- Place in the root directory -->
+  <!-- Facebook Meta Information -->
+  <meta property="og:site_name" content="CryptoCrawler - Elegant Cryptocurrency Monitoring">
+  <meta property="og:description" content="Simple but elegant Cryptocurrency Monitoring."/>
+  <meta property="og:image" content="">
+  <meta property="og:image:type" content="image/jpg">
+  <meta property="og:image:width" content="">
+  <meta property="og:image:height" content="">
+  
+  <!-- Twitter Meta Information -->
+  <meta name="twitter:title" content="CryptoCrawler - Elegant Cryptocurrency Monitoring">
+  <meta name="twitter:description" content="Simple but elegant Cryptocurrency Monitoring.">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:card" content="">
+  <meta name="twitter:image:alt" content="">
+  
+  <!-- Favicon - place in the root directory -->
   <!--<link href="favicon.ico" rel="shortcut icon">-->
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
-  <!-- Custom.js -->
-  <script src="lib/custom.js"></script>
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -29,12 +43,13 @@
   <link href="lib/css/style.min.css" rel="stylesheet">
   
   <!--Ticker & Coin Javascript (must remain at top) -->
-  <script src="lib/charts/loader.js"></script>
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-ui.min.js"></script>
+  <script src="lib/charts/loader.js"></script>
   <script src="lib/api/rawCoins.js"></script>
   <script src="lib/api/ticker.min.js"></script>
   <script src="lib/tether/tether.min.js"></script>
+  <script src="lib/custom.min.js"></script>
 
 </head>
 
@@ -54,8 +69,8 @@
           <img class="" src="" alt="">
         </div>
 
-        <h1>Welcome to Cointicker</h1>
-        <h2>Simple but elegant Cryptocurrency <span class="rotating">data tables, historical charts, pool stats</span>!</h2>
+        <h1>Welcome to CryptoCrawler</h1>
+        <h2>Simple but elegant cryptocurrency <span class="rotating">data tables, historical charts, pool stats</span>!</h2>
         <div class="actions">
           <a href="#datatables" class="btn-data-tables">Data Tables</a>
           <a href="#historicalcharts" class="btn-charts">Historical Charts</a>
@@ -73,7 +88,7 @@
 
       <div id="logo" class="pull-left">
         <!--<a href="#welcome"><img src="" alt="" title="" /></img></a>-->
-        <h1><a href="#welcome">Cointicker</a></h1>
+        <h1><a href="#welcome">CryptoCrawler</a></h1>
       </div>
 
       <nav id="nav-menu-container">
@@ -168,7 +183,7 @@
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="section-title">Cointicker Mining Pool Information</h3>
+          <h3 class="section-title">CryptoCrawler Mining Pool Information</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
         </div>
@@ -310,7 +325,7 @@
           <div class="info">
             <div>
               <i class="fa fa-envelope"></i>
-              <p>support@cointicker.com</p>
+              <p></p>
             </div>
 
           </div>

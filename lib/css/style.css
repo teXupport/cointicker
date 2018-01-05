@@ -212,12 +212,12 @@ img.icon {
 }
 
 #header #logo h1 {
-  font-size: 36px;
+  font-size: 28px;
   margin: 0;
   padding: 6px 0;
   line-height: 1;
   font-family: "Raleway", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
