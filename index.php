@@ -31,8 +31,10 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CDN -->
+  <!--<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -45,6 +47,7 @@
   <!--Ticker & Coin Javascript (must remain at top) -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="lib/charts/loader.js"></script>
   <script src="lib/api/rawCoins.js"></script>
   <script src="lib/api/ticker.min.js"></script>
@@ -93,7 +96,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#welcome">Home</a></li>
+          <li><a href="#welcome">Home</a></li>
           <li><a href="#datatables">Data Tables</a></li>
           <li><a href="#historicalcharts">Historical Charts</a></li>
           <li><a href="#cointickerpool">Mining Pool</a></li>
@@ -113,7 +116,7 @@
         </ul>
       </nav>
       <!-- #nav-menu-container -->
-	  <input id="sym-text" placeholder="Search Symbol"/><button id="add-sym">Add Symbol</button>
+	  
     </div>
   </header>
   <!-- #header -->
@@ -124,10 +127,36 @@
   <section id="datatables">
     <div class="container wow fadeInUp">
 	<div class="row">
-        <div class="col-md-12">
+        <div class="col">
+			<div class="card bg-info text-white">
+				<div class="card-body">
+				<h4 class="card-title"><i class="fa fa-bank"> Total Crypto Market Cap</i></h4>
+				<p class="card-text">###</p>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card bg-info text-white">
+				<div class="card-body">
+				<h4 class="card-title"><i class="fa fa-line-chart"> 24 Hour Trade Volume</i></h4>
+				<p class="card-text">###</p>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card bg-info text-white">
+				<div class="card-body">
+				<h4 class="card-title"><i class="fa fa-bank"> Placeholder</i></h4>
+				<p class="card-text">###</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
           <h3 class="section-title">Data Table</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description"></p>
+          <p class="section-description"><input id="sym-text" placeholder="Search Symbol"/><button id="add-sym">Add Symbol</button></p>
         </div>
       </div>
     </div>
@@ -159,11 +188,10 @@
   <section id="historicalcharts">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Historical Charts</h3>
 		  <label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" />
-          <div class="section-title-divider"></div>
-		  
+          <div class="section-title-divider"></div>  
           <p class="section-description"></p>
         </div>
       </div>
@@ -182,7 +210,7 @@
   <section id="cointickerpool">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">CryptoCrawler Mining Pool Information</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
@@ -234,7 +262,7 @@
   <section id="placeholder1">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Placeholder 1</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
@@ -251,7 +279,7 @@
   <section id="placeholder2">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Placeholder 2</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
@@ -267,7 +295,7 @@
   <section id="developers">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Our Team</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
@@ -275,9 +303,8 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col">
           <div class="member">
-            <div class="pic"><img src="#" alt=""></div>
             <h4>Tyler</h4>
             <span>Lead Developer</span>
             <div class="social">
@@ -289,16 +316,15 @@
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col">
           <div class="member">
-            <div class="pic"><img src="#" alt=""></div>
             <h4>Dalen</h4>
             <span>Motion and Interaction Design</span>
             <div class="social">
               <a href=""><i class="fa fa-twitter"></i></a>
               <a href=""><i class="fa fa-facebook"></i></a>
               <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
+              <a href="https://www.linkedin.com/in/dalen-humiston-1b59809a/"><i class="fa fa-linkedin"></i></a>
             </div>
           </div>
         </div>
@@ -313,7 +339,7 @@
   <section id="contact">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Contact Us</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
@@ -378,7 +404,7 @@
 
   <!-- Required JavaScript Libraries -->
 
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <!--<script src="lib/bootstrap/js/bootstrap.min.js"></script>-->
   <script src="lib/superfish/hoverIntent.min.js"></script>
   <script src="lib/superfish/superfish.min.js"></script>
   <script src="lib/morphext/morphext.min.js"></script>
