@@ -43,6 +43,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="lib/css/style.min.css" rel="stylesheet">
+  <link href="lib/css/menu.css" rel="stylesheet">
   
   <!--Ticker & Coin Javascript (must remain at top) -->
   <script src="lib/jquery/jquery.min.js"></script>
@@ -93,7 +94,7 @@
         <!--<a href="#welcome"><img src="" alt="" title="" /></img></a>-->
         <h1><a href="#welcome">CryptoCrawler</a></h1>
       </div>
-
+	
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li><a href="#welcome">Home</a></li>
@@ -101,20 +102,12 @@
           <li><a href="#historicalcharts">Historical Charts</a></li>
           <li><a href="#cointickerpool">Mining Pool</a></li>
           <li><a href="#placeholder1">Placeholder 1</a></li>
-          <li><a href="#placeholder2">Placeholder 2</a>
-            <!--Keeping this here if we decide to use it
-			<ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>-->
-          </li>
+          <li><a href="#exchanges" data-toggle="tooltip" title="Pick which exchange to pull information from.">Exchanges</a></li>
 		  <li><a href="#developers">Developers</a></li>
           <li><a href="#contact">Contact Us</a></li>
         </ul>
       </nav>
+	 </div>
       <!-- #nav-menu-container -->
 	  
     </div>
@@ -274,15 +267,44 @@
 	<div class="section-divider"></div>
   </section>
   <!--==========================
-  placerholder2 Section
+  Exchanges Section
   ============================-->
-  <section id="placeholder2">
+  <section id="exchanges">
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col">
-          <h3 class="section-title">Placeholder 2</h3>
+          <h3 class="section-title">Exchanges</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description"></p>
+          <p class="section-description">Pick which exchange to pull information from.</p>
+		  <div class="menu">
+		  <ul>
+			  <li><a href="#">796</a></li>
+              <li><a href="#">Bitfinex</a></li>
+			  <li><a href="#">bitFlyer</a></li>
+			  <li><a href="#">Bithumb</a></li>
+			  <li><a href="#">Bitmex</a></li>
+			  <li><a href="#">Bitsquare</a></li>
+			  <li><a href="#">Bitstamp</a></li>
+			  <li><a href="#">Bittrex</a></li>
+			  <li><a href="#">BitVC</a></li>
+			  <li><a href="#">BTC China</a></li>
+			  <li><a href="#">BTC-e</a></li>
+			  <li><a href="#">Cryptsy</a></li>
+              <li><a href="#">GDAX</a></li>
+			  <li><a href="#">Gemeni</a></li>
+			  <li><a href="#">Huobi</a></li>
+              <li><a href="#">Kraken</a></li>
+			  <li><a href="#">Mexbt</a></li>
+			  <li><a href="#">Mt. Gox</a></li>
+			  <li><a href="#">Luno</a></li>
+			  <li><a href="#">OKCoin</a></li>
+			  <li><a href="#">Poloniex</a></li>
+			  <li><a href="#">Qryptos</a></li>
+			  <li><a href="#">Quadriga</a></li>
+			  <li><a href="#">Quoine</a></li>
+			  <li><a href="#">Vault of Satoshi</a></li>
+            </ul>
+		</div>
         </div>
       </div>
     </div>
