@@ -30,12 +30,16 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+  
+  <!-- jQuery JS Files -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-ui.min.js"></script>
 
   <!-- Bootstrap CDN -->
   <!--<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+  
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/animate-css/animate.min.css" rel="stylesheet">
@@ -43,11 +47,8 @@
 
   <!-- Main Stylesheet File -->
   <link href="lib/css/style.min.css" rel="stylesheet">
-  <link href="lib/css/menu.css" rel="stylesheet">
   
   <!--Ticker & Coin Javascript (must remain at top) -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="lib/charts/loader.js"></script>
   <script src="lib/api/rawCoins.js"></script>
@@ -94,7 +95,6 @@
         <!--<a href="#welcome"><img src="" alt="" title="" /></img></a>-->
         <h1><a href="#welcome">CryptoCrawler</a></h1>
       </div>
-	
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li><a href="#welcome">Home</a></li>
@@ -147,16 +147,72 @@
 	</div>
 	<div class="row">
 		<div class="col">
-          <h3 class="section-title">Data Table</h3>
+          <h3 class="section-title" style="margin-top: 10px;">Data Table</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"><input id="sym-text" placeholder="Search Symbol"/><button id="add-sym">Add Symbol</button></p>
         </div>
       </div>
     </div>
 	<div id="ticker">
-	
 		<table id="coins-tb" class="table-responsivechart table-bordered">
 			<tr>
+				<td colspan="12">
+				<button class="btn btn-info btn" data-toggle="modal" data-target="#exchangeselect"style="margin-left: 5px;">Select Exchange</button>
+					<div class="modal fade" id="exchangeselect">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4 class="modal-title">Select which exchange to pull information from.</h4>
+								</div>
+								<div class="modal-body">
+									<div class="row">
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">796</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bitfinex</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">bitFlyer</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bithumb</a></button></div>
+									 </div>
+									 <div class="row"> 
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bitmex</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bitsquare</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bitstamp</a></button></div>					 
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bittrex</a></button></div>
+									 </div>
+									 <div class="row">
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">BitVC</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">BTC China</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">BTC-e</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Cryptsy</a></button></div>
+									 </div>
+									 <div class="row">
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">GDAX</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Gemeni</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Huobi</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Kraken</a></button></div>
+									 </div>
+									 <div class="row">
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Mexbt</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Mt. Gox</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Luno</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">OKCoin</a></button></div>
+									 </div>
+									 <div class="row">
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Poloniex</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Qryptos</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Quadriga</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Quoine</a></button></div>
+									 </div>
+									 <div class="row">
+									 <div class="col-md-12"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Vault of Satoshi</a></button></div>
+									</div>
+      							</div>
+								<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal --></td>
+				</tr>
+				<tr>
 				<th>Symbol</th>
 				<th>Name</th>
 				<th>Price (USD)</th>
@@ -275,36 +331,7 @@
         <div class="col">
           <h3 class="section-title">Exchanges</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">Pick which exchange to pull information from.</p>
-		  <div class="menu">
-		  <ul>
-			  <li><a href="#">796</a></li>
-              <li><a href="#">Bitfinex</a></li>
-			  <li><a href="#">bitFlyer</a></li>
-			  <li><a href="#">Bithumb</a></li>
-			  <li><a href="#">Bitmex</a></li>
-			  <li><a href="#">Bitsquare</a></li>
-			  <li><a href="#">Bitstamp</a></li>
-			  <li><a href="#">Bittrex</a></li>
-			  <li><a href="#">BitVC</a></li>
-			  <li><a href="#">BTC China</a></li>
-			  <li><a href="#">BTC-e</a></li>
-			  <li><a href="#">Cryptsy</a></li>
-              <li><a href="#">GDAX</a></li>
-			  <li><a href="#">Gemeni</a></li>
-			  <li><a href="#">Huobi</a></li>
-              <li><a href="#">Kraken</a></li>
-			  <li><a href="#">Mexbt</a></li>
-			  <li><a href="#">Mt. Gox</a></li>
-			  <li><a href="#">Luno</a></li>
-			  <li><a href="#">OKCoin</a></li>
-			  <li><a href="#">Poloniex</a></li>
-			  <li><a href="#">Qryptos</a></li>
-			  <li><a href="#">Quadriga</a></li>
-			  <li><a href="#">Quoine</a></li>
-			  <li><a href="#">Vault of Satoshi</a></li>
-            </ul>
-		</div>
+          <p class="section-description"></p>
         </div>
       </div>
     </div>
