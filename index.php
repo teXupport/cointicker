@@ -3,20 +3,38 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Cointicker - Elegant Cryptocurrency Monitoring</title>
+  <title>CryptoCrawler - Elegant Cryptocurrency Monitoring</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="Cryptocurrency, altcoin, bitcoin, litecoin, ethereum" name="keywords">
+  <meta content="CryptoCrawler, Cryptocurrency, altcoin, bitcoin, litecoin, ethereum" name="keywords">
   <meta content="Simple but elegant Cryptocurrency Monitoring" name="description">
   <meta content="Dalen & Tyler" name="author">
+  <meta name="robots" content="index, follow">
 
-  <!-- Place in the root directory -->
+  <!-- Facebook Meta Information -->
+  <meta property="og:site_name" content="CryptoCrawler - Elegant Cryptocurrency Monitoring">
+  <meta property="og:description" content="Simple but elegant Cryptocurrency Monitoring."/>
+  <meta property="og:image" content="">
+  <meta property="og:image:type" content="image/jpg">
+  <meta property="og:image:width" content="">
+  <meta property="og:image:height" content="">
+  
+  <!-- Twitter Meta Information -->
+  <meta name="twitter:title" content="CryptoCrawler - Elegant Cryptocurrency Monitoring">
+  <meta name="twitter:description" content="Simple but elegant Cryptocurrency Monitoring.">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:card" content="">
+  <meta name="twitter:image:alt" content="">
+  
+  <!-- Favicon - place in the root directory -->
   <!--<link href="favicon.ico" rel="shortcut icon">-->
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CDN -->
+  <!--<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -24,15 +42,17 @@
   <link href="lib/tether/tether.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="lib/css/style.css" rel="stylesheet">
+  <link href="lib/css/style.min.css" rel="stylesheet">
   
   <!--Ticker & Coin Javascript (must remain at top) -->
-  <script src="lib/charts/loader.js"></script>
-  <script src="lib/jquery/jquery-ui.js"></script>
   <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="lib/charts/loader.js"></script>
   <script src="lib/api/rawCoins.js"></script>
-  <script src="lib/api/ticker.js"></script>
+  <script src="lib/api/ticker.min.js"></script>
   <script src="lib/tether/tether.min.js"></script>
+  <script src="lib/custom.min.js"></script>
 
 </head>
 
@@ -44,7 +64,7 @@
   ============================-->
   <section id="welcome">
       <video autoplay loop muted poster="" id="vid">
-    <source src="img/StarsSpaceBackground.mp4" type="video/mp4">
+    <source src="lib/img/StarsSpaceBackground.mp4" type="video/mp4">
     </video>
     <div class="welcome-container">
       <div class="wow fadeIn">
@@ -52,8 +72,8 @@
           <img class="" src="" alt="">
         </div>
 
-        <h1>Welcome to Cointicker</h1>
-        <h2>Simple but elegant Cryptocurrency <span class="rotating">data tables, historical charts, pool stats</span>!</h2>
+        <h1>Welcome to CryptoCrawler</h1>
+        <h2>Simple but elegant cryptocurrency <span class="rotating">data tables, historical charts, pool stats</span>!</h2>
         <div class="actions">
           <a href="#datatables" class="btn-data-tables">Data Tables</a>
           <a href="#historicalcharts" class="btn-charts">Historical Charts</a>
@@ -71,12 +91,12 @@
 
       <div id="logo" class="pull-left">
         <!--<a href="#welcome"><img src="" alt="" title="" /></img></a>-->
-        <h1><a href="#welcome">Cointicker</a></h1>
+        <h1><a href="#welcome">CryptoCrawler</a></h1>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#welcome">Home</a></li>
+          <li><a href="#welcome">Home</a></li>
           <li><a href="#datatables">Data Tables</a></li>
           <li><a href="#historicalcharts">Historical Charts</a></li>
           <li><a href="#cointickerpool">Mining Pool</a></li>
@@ -96,7 +116,7 @@
         </ul>
       </nav>
       <!-- #nav-menu-container -->
-	  <input id="sym-text" placeholder="Search Symbol"/><button id="add-sym">Add Symbol</button>
+	  
     </div>
   </header>
   <!-- #header -->
@@ -107,10 +127,36 @@
   <section id="datatables">
     <div class="container wow fadeInUp">
 	<div class="row">
-        <div class="col-md-12">
+        <div class="col">
+			<div class="card bg-info text-white">
+				<div class="card-body">
+				<h4 class="card-title"><i class="fa fa-bank"> Total Crypto Market Cap</i></h4>
+				<p class="card-text">###</p>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card bg-info text-white">
+				<div class="card-body">
+				<h4 class="card-title"><i class="fa fa-line-chart"> 24 Hour Trade Volume</i></h4>
+				<p class="card-text">###</p>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card bg-info text-white">
+				<div class="card-body">
+				<h4 class="card-title"><i class="fa fa-bank"> Placeholder</i></h4>
+				<p class="card-text">###</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
           <h3 class="section-title">Data Table</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description"></p>
+          <p class="section-description"><input id="sym-text" placeholder="Search Symbol"/><button id="add-sym">Add Symbol</button></p>
         </div>
       </div>
     </div>
@@ -142,11 +188,10 @@
   <section id="historicalcharts">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Historical Charts</h3>
 		  <label for="chart-control">Enable charts (beta)?</label> <input id="chart-control" type="checkbox" />
-          <div class="section-title-divider"></div>
-		  
+          <div class="section-title-divider"></div>  
           <p class="section-description"></p>
         </div>
       </div>
@@ -165,8 +210,8 @@
   <section id="cointickerpool">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Cointicker Mining Pool Information</h3>
+        <div class="col">
+          <h3 class="section-title">CryptoCrawler Mining Pool Information</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
         </div>
@@ -217,7 +262,7 @@
   <section id="placeholder1">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Placeholder 1</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
@@ -234,7 +279,7 @@
   <section id="placeholder2">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Placeholder 2</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
@@ -250,7 +295,7 @@
   <section id="developers">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Our Team</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
@@ -258,9 +303,8 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col">
           <div class="member">
-            <div class="pic"><img src="#" alt=""></div>
             <h4>Tyler</h4>
             <span>Lead Developer</span>
             <div class="social">
@@ -272,16 +316,15 @@
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col">
           <div class="member">
-            <div class="pic"><img src="#" alt=""></div>
             <h4>Dalen</h4>
             <span>Motion and Interaction Design</span>
             <div class="social">
               <a href=""><i class="fa fa-twitter"></i></a>
               <a href=""><i class="fa fa-facebook"></i></a>
               <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
+              <a href="https://www.linkedin.com/in/dalen-humiston-1b59809a/"><i class="fa fa-linkedin"></i></a>
             </div>
           </div>
         </div>
@@ -296,7 +339,7 @@
   <section id="contact">
     <div class="container wow fadeInUp">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h3 class="section-title">Contact Us</h3>
           <div class="section-title-divider"></div>
           <p class="section-description"></p>
@@ -308,7 +351,7 @@
           <div class="info">
             <div>
               <i class="fa fa-envelope"></i>
-              <p>support@cointicker.com</p>
+              <p></p>
             </div>
 
           </div>
@@ -361,14 +404,14 @@
 
   <!-- Required JavaScript Libraries -->
 
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
+  <!--<script src="lib/bootstrap/js/bootstrap.min.js"></script>-->
+  <script src="lib/superfish/hoverIntent.min.js"></script>
   <script src="lib/superfish/superfish.min.js"></script>
   <script src="lib/morphext/morphext.min.js"></script>
   <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/stickyjs/sticky.js"></script>
+  <script src="lib/stickyjs/sticky.min.js"></script>
   <script src="lib/easing/easing.js"></script>
-  <script src="lib/custom.js"></script>
+  
 
 </body>
 </html>
