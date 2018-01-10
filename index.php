@@ -38,7 +38,7 @@
   <!-- Bootstrap CDN -->
   <!--<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+  <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
   
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -48,13 +48,12 @@
   <!-- Main Stylesheet File -->
   <link href="lib/css/style.min.css" rel="stylesheet">
   
-  <!--Ticker & Coin Javascript (must remain at top) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <!-- Resource-package.min.js contains 7 JS files - do not modify order -->
+  
   <script src="lib/charts/loader.js"></script>
   <script src="lib/api/rawCoins.js"></script>
-  <script src="lib/api/ticker.min.js"></script>
-  <script src="lib/tether/tether.min.js"></script>
-  <script src="lib/custom.min.js"></script>
+  <script src="lib/api/ticker.js"></script>
+  <script src="lib/resource-package.min.js"></script>
 
 </head>
 
@@ -452,15 +451,8 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- Required JavaScript Libraries -->
-
-  <!--<script src="lib/bootstrap/js/bootstrap.min.js"></script>-->
-  <script src="lib/superfish/hoverIntent.min.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/morphext/morphext.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/stickyjs/sticky.min.js"></script>
-  <script src="lib/easing/easing.js"></script>
-  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script async src="lib/tether/tether.min.js"></script>
 
 </body>
 </html>
