@@ -165,43 +165,33 @@
 								</div>
 								<div class="modal-body">
 									<div class="row">
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">796</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bitfinex</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">bitFlyer</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bithumb</a></button></div>
-									 </div>
-									 <div class="row"> 
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bitmex</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bitsquare</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bitstamp</a></button></div>					 
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Binance</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bisq</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bitstamp</a></button></div>
 									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Bittrex</a></button></div>
 									 </div>
 									 <div class="row">
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">BitVC</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">BTC China</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">BTC-e</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Cryptsy</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">CCEX</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Cex.io</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Coinbase</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Coinfloor</a></button></div>
 									 </div>
 									 <div class="row">
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">GDAX</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Gemeni</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Huobi</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">CryptoX</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">EXX</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Gatecoin</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Gemini</a></button></div>
+									 </div>
+									 <div class="row">
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">HitBTC</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">itBit</a></button></div>
 									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Kraken</a></button></div>
-									 </div>
-									 <div class="row">
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Mexbt</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Mt. Gox</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Luno</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">OKCoin</a></button></div>
-									 </div>
-									 <div class="row">
 									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Poloniex</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Qryptos</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Quadriga</a></button></div>
-									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Quoine</a></button></div>
 									 </div>
 									 <div class="row">
-									 <div class="col-md-12"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Vault of Satoshi</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Tidex</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Trustdex</a></button></div>
+									 <div class="col-md-3"><button class="btn btn-white btn-md" id="exchangebtn"><a href="#">Yacuna</a></button></div>
 									</div>
       							</div>
 								<div class="modal-footer">
